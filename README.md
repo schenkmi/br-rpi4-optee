@@ -23,7 +23,8 @@ git clone -b "2018.05.x" https://github.com/buildroot/buildroot.git
 Now you have two directories called `buildroot` and `br-rpi3-optee`. The `buildroot` directory contains the buildroot sources and `br-rpi3-optee` contains the OP-TEE, ARM TF, Raspberry Pi Firmware and U-Boot packages. The next step is to create a build directory called `out` which will contain the downloaded package source files and the output images. We will use this directory for an out-of-tree Buildroot build, by adding the `O=` parameter to the make command. We have to specify the directories where the external trees are stored, which can be done by adding the `BR2_EXTERNAL=` parameter to make (We can specify multiple directories by using `:` as a separator). The default config file is called `rpi3_defconfig` which is inside the `br-rpi3-optee/configs` directory.
 ```
 mkdir -p out && cd out
-make -C ../buildroot O="$(pwd)" BR2_EXTERNAL="../br-rpi3-optee" rpi3_defconfig
+make -C ../buildroot O="$(pwd)" BR2_EXTERNAL=".." rpi4_defconfig
+
 ```
 
 After the configuration has been finalized you can issue the make command to start building the sources. This can take a long time, so be patient.

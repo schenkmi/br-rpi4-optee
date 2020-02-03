@@ -1,7 +1,7 @@
 /dts-v1/;
 
 / {
-	description = "RPi3 FIT Image";
+	description = "RPi4 FIT Image";
 	#address-cells = <2>;
 
 	images {
@@ -32,7 +32,7 @@
 		};
 		fdt-1 {
 			description = "device tree";
-			data = /incbin/("bcm2710-rpi-3-b.dtb");
+			data = /incbin/("bcm2711-rpi-4-b");
 			type = "flat_dt";
 			arch = "arm64";
 			compression = "none";

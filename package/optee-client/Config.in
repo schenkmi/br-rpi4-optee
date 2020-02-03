@@ -1,5 +1,0 @@
-config BR2_PACKAGE_OPTEE_CLIENT
-	bool "optee-client"
-	select BR2_PACKAGE_OPTEE_OS
-	help
-	  https://github.com/OP-TEE/optee_client
