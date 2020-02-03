@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ITS_FILE="${BR2_EXTERNAL_RPI3_OPTEE_PATH}/board/rpi3/rpi3_fit.its"
-CONFIG_FILE="${BR2_EXTERNAL_RPI3_OPTEE_PATH}/board/rpi3/config.txt"
+ITS_FILE="${BR2_EXTERNAL_RPI4_OPTEE_PATH}/board/rpi4/rpi4_fit.its"
+CONFIG_FILE="${BR2_EXTERNAL_RPI4_OPTEE_PATH}/board/rpi4/config.txt"
 
 cd ${BINARIES_DIR}
 echo $(pwd)
@@ -13,20 +13,20 @@ cp uboot-env.bin boot/
 cp rpi-firmware/COPYING.linux boot/
 cp rpi-firmware/LICENCE.broadcom boot/
 cp rpi-firmware/bootcode.bin boot/
-cp rpi-firmware/fixup.dat boot/
-cp rpi-firmware/fixup_cd.dat boot/
-cp rpi-firmware/fixup_db.dat boot/
-cp rpi-firmware/fixup_x.dat boot/
-cp rpi-firmware/start.elf boot/
-cp rpi-firmware/start_cd.elf boot/
-cp rpi-firmware/start_db.elf boot/
-cp rpi-firmware/start_x.elf boot/
+cp rpi-firmware/fixup4.dat boot/
+cp rpi-firmware/fixup4cd.dat boot/
+cp rpi-firmware/fixup4db.dat boot/
+cp rpi-firmware/fixup4x.dat boot/
+cp rpi-firmware/start4.elf boot/
+cp rpi-firmware/start4cd.elf boot/
+cp rpi-firmware/start4db.elf boot/
+cp rpi-firmware/start4x.elf boot/
 cp ${CONFIG_FILE} boot/
 
 cd boot
 tar -cvf ../bootfs.tar .
 
-GENIMAGE_CFG="${BR2_EXTERNAL_RPI3_OPTEE_PATH}/board/rpi3/genimage-raspberrypi3-64.cfg"
+GENIMAGE_CFG="${BR2_EXTERNAL_RPI4_OPTEE_PATH}/board/rpi4/genimage-raspberrypi4-64.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
 rm -rf "${GENIMAGE_TMP}"
