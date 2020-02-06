@@ -45,3 +45,11 @@ Buildroot provides an easy way to add new files into the target file system with
 
 ### Custom host key for the SSH deamon
 If you want to use a custom SSH daemon host key, you can copy it into the rootfs overlay directory called `etc/ssh`. If no key files are present, ssh-keygen will be used to generate the default keys during build. This enables us to use the same key for the following builds and aviod host fingerprint changes.
+
+
+### Write image to SD card
+sudo dd if=images/sdcard.img of=/dev/sdc bs=1M conv=fdatasync status=progress
+
+
+sudo picocom -b 115200 /dev/ttyUSB1
+

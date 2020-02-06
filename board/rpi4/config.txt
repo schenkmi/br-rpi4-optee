@@ -1,5 +1,10 @@
 enable_uart=1
-arm_control=0x200
+arm_64bit=1
+enable_gic=1
+
+
+#enable_uart=1
+#arm_control=0x200
 kernel_old=1
 
 kernel=u-boot-rpi.bin
